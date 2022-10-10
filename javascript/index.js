@@ -104,5 +104,30 @@ makeBroccoli();
 
 // Bonus 2 - Promise all
 Promise.all([
-  obtainInstruction
+  obtainInstruction('brusselsSprouts', 0),
+  obtainInstruction('brusselsSprouts', 1),
+  obtainInstruction('brusselsSprouts', 2),
+  obtainInstruction('brusselsSprouts', 3),
+  obtainInstruction('brusselsSprouts', 4),
+  obtainInstruction('brusselsSprouts', 5),
+  obtainInstruction('brusselsSprouts', 6),
+  obtainInstruction('brusselsSprouts', 7),
+  
+
 ])
+.then((list) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[0]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[1]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[2]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[3]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[4]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[5]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[6]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${list[7]}</li>`
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>brusselsSprouts is ready!</li>`
+  document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+
+})
+.catch((error) => {
+  console.log(error)
+})
