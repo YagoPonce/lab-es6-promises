@@ -39,7 +39,7 @@ getInstruction('mashedPotatoes', 0, (step0) => {
         getInstruction('mashedPotatoes', 4, (step4) => {
           document.querySelector("#mashedPotatoes").innerHTML += `<li>${step4}</li>`
           document.querySelector("#mashedPotatoes").innerHTML += `<li>Mushpotatos are ready!</li>`
-          
+          document.querySelector("#mashedPotatoesImg").removeAttribute("hidden")
         }, (error) => console.log(error) );
       }, (error) => console.log(error) );
     }, (error) => console.log(error) );
@@ -67,6 +67,7 @@ obtainInstruction('steak', 0)
   .then((step4) => {
     document.querySelector("#steak").innerHTML += `<li>${step4}</li>`
     document.querySelector("#steak").innerHTML += `<li>Steak is ready!</li>`
+    document.querySelector("#steakImg").removeAttribute("hidden")
   })
   .catch((error) => {
     console.log(error)
@@ -74,7 +75,32 @@ obtainInstruction('steak', 0)
   // ... Your code here
 
 // Iteration 3 using async/await
-// ...
+async function makeBroccoli() {
+ try {
+  let frase = await obtainInstruction('broccoli', 0)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[0]}</li>`
+  let frase2 = await obtainInstruction('broccoli', 1)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[1]}</li>`
+  let frase3 = await obtainInstruction('broccoli', 2)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[2]}</li>`
+  let frase4 = await obtainInstruction('broccoli', 3)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[3]}</li>`
+  let frase5 = await obtainInstruction('broccoli', 4)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[4]}</li>`
+  let frase6 = await obtainInstruction('broccoli', 5)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[5]}</li>`
+  let frase7 = await obtainInstruction('broccoli', 6)
+  document.querySelector("#broccoli").innerHTML += `<li>${broccoli[6]}</li>`
+  document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`
+  document.querySelector("#broccoliImg").removeAttribute("hidden");
+} catch (error){
+  console.log(error)
+}
+
+}
+makeBroccoli();
+
+
 
 // Bonus 2 - Promise all
 // ...
