@@ -103,4 +103,6 @@ makeBroccoli();
 
 
 // Bonus 2 - Promise all
-// ...
+Promise.all([
+  obtainInstruction
+])
